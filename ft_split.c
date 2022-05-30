@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:58:21 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/05/30 13:58:43 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/05/30 15:44:32 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include <stdlib.h>
 
-static size_t	count_words(char *str, char c)
+size_t	count_words(char *str, char c)
 {
 	size_t	i;
 	size_t	words;

@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 14:01:56 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/05/30 14:27:56 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/05/30 16:38:28 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ static int	is_space(int c)
 
 int	ft_atoi(const char *str)
 {
-	int		idx;
-	int		sign;
-	int		result;
+	int			idx;
+	int			sign;
+	long long	result;
 
 	result = 0;
 	idx = 0;
@@ -55,4 +55,9 @@ int	ft_atoi(const char *str)
 		idx++;
 	}
 	return (result * sign);
+}
+
+int	ft_isdigit(int c)
+{
+	return (c >= '0' && c <= '9');
 }

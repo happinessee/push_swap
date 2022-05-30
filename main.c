@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:50:55 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/05/30 15:13:11 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/05/30 16:37:06 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,62 @@
 
 void	error(void)
 {
-	write(1, "Error\n", 6);
+	write(2, "Error\n", 6);
 	exit(1);
+}
+
+int	get_size(int argc, char **argv)
+{
+	int		cnt;
+	int		idx;
+
+	cnt = 0;
+	idx = 1;
+	while (idx < argc - 1)
+	{
+		if (ft_strlen(argv[idx]) > 1)
+		{
+			cnt += 1;
+		}
+		else
+		{
+			cnt += count_words(argv[idx], '\n');
+		}
+		idx++;
+	}
+	return (cnt);
+}
+
+int	*make_num_arr(int *num_arr, int size, char **argv)
+{
+	int		idx;
+	int		cnt;
+	char	**tmp_str;
+
+	idx = 1;
+	cnt = 0;
+	while (idx < size)
+	{
+		if (ft_strlen(argv[idx]) > 1)
+		{
+
+		}
+		else
+		{
+			num_arr[cnt] = ft_atoi(argv[idx]);
+		}
+	}
 }
 
 int	main(int argc, char **argv)
 {
 	int		*num_arr;
-	char	**tmp_str;
-	int		idx;
+	int		size;
 
-	idx = 1;
+	size = get_size(argc, argv);
+
 	if (argc < 2)
 		error();
-	while (1)
-	{
-		if (ft_strlen(argv[idx]) > 1)
-		{
-			tmp_str = ft_split(ft_strlen(argv[idx]), ' ');
-		}
-		else
-		{
-			num_arr = ft_atoi(argv[idx]);
-		}
-	}
+	num_arr = malloc(sizeof(int) * (get_size(argc, argv) + 1));
+	
 }
