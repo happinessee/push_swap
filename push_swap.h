@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:49:09 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/05/30 15:44:58 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/05/30 17:17:47 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_list
 size_t	count_words(char *str, char c);
 char	**ft_split(char const *s, char c);
 size_t	ft_strlen(const char *s);
+int		ft_isdigit(int c);
 int		ft_atoi(const char *str);
 
 #endif
