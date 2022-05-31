@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:50:55 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/05/31 17:23:41 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/05/31 19:33:57 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,9 @@ void	check_arr(int *num_arr)
 	int	idx2;
 
 	idx = 0;
-	idx2 = 1;
-	while (num_arr[idx])
+	while (num_arr[idx + 1])
 	{
+		idx2 = idx + 1;
 		if (!(ft_isdigit(num_arr[idx])))
 			error();
 		while (num_arr[idx2])
@@ -89,6 +89,30 @@ void	check_arr(int *num_arr)
 		}
 		idx++;
 	}
+}
+
+void	is_sorted(int *num_arr, int size)
+{
+	int	idx;
+	int	max;
+	int	tmp;
+	int	cnt;
+
+	idx = 0;
+	max = 0;
+	cnt = 0;
+	while (num_arr[idx])
+	{
+		tmp = num_arr[idx];
+		if (tmp > max)
+		{
+			max = tmp;
+			cnt += 1;
+		}
+		idx++;
+	}
+	if (cnt == size)
+		exit(0);
 }
 
 int	main(int argc, char **argv)
@@ -102,5 +126,8 @@ int	main(int argc, char **argv)
 		error();
 	num_arr = malloc(sizeof(int) * (get_size(argc, argv) + 1));
 	num_arr = make_num_arr(num_arr, size, argv);
+	check_arr(num_arr);
+	is_sorted(num_arr, size);
+	
 	return (0);
 }
