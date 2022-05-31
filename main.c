@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:50:55 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/05/30 17:29:13 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/05/31 17:23:41 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,9 @@ int	get_size(int argc, char **argv)
 	while (idx < argc)
 	{
 		if (ft_strlen(argv[idx]) > 1)
-		{
 			cnt += count_words(argv[idx], '\n');
-		}
 		else
-		{
 			cnt += 1;
-		}
 		idx++;
 	}
 	return (cnt);
@@ -72,6 +68,27 @@ int	*make_num_arr(int *num_arr, int size, char **argv)
 		cnt++;
 	}
 	return (num_arr);
+}
+
+void	check_arr(int *num_arr)
+{
+	int	idx;
+	int	idx2;
+
+	idx = 0;
+	idx2 = 1;
+	while (num_arr[idx])
+	{
+		if (!(ft_isdigit(num_arr[idx])))
+			error();
+		while (num_arr[idx2])
+		{
+			if (num_arr[idx] == num_arr[idx2])
+				error();
+			idx2++;
+		}
+		idx++;
+	}
 }
 
 int	main(int argc, char **argv)

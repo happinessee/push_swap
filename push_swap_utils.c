@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 14:01:56 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/05/30 16:38:28 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/05/31 17:24:56 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ int	ft_atoi(const char *str)
 		result = result * 10 + str[idx] - '0';
 		idx++;
 	}
+	if (result * sign < -2147483648 || result * sign > 2147483647)
+		error();
 	return (result * sign);
 }
 
