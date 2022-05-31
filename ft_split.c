@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:58:21 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/05/30 15:44:32 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/05/31 19:50:08 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,11 @@ static char	**clear(char **str, size_t cnt)
 	while (idx < cnt)
 	{
 		free(str[idx]);
+		str[idx] = 0;
 		idx++;
 	}
 	free(str);
+	str = 0;
 	return (0);
 }
 

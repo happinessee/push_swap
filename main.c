@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:50:55 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/05/31 19:33:57 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/05/31 19:53:45 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,21 @@ int	get_size(int argc, char **argv)
 	return (cnt);
 }
 
+void	clear(char **str)
+{
+	size_t	idx;
+
+	idx = 0;
+	while (str[idx])
+	{
+		free(str[idx]);
+		str[idx] = 0;
+		idx++;
+	}
+	free(str);
+	str = 0;
+}
+
 int	*make_num_arr(int *num_arr, int size, char **argv)
 {
 	int		idx;
@@ -62,6 +77,7 @@ int	*make_num_arr(int *num_arr, int size, char **argv)
 				num_arr[cnt] = ft_atoi(tmp_str[i]);
 				cnt++;
 			}
+			clear(tmp_str);
 		}
 		else
 			num_arr[cnt] = ft_atoi(argv[idx]);
@@ -121,13 +137,13 @@ int	main(int argc, char **argv)
 	int		size;
 
 	size = get_size(argc, argv);
-
 	if (argc < 2)
 		error();
 	num_arr = malloc(sizeof(int) * (get_size(argc, argv) + 1));
+	if (num_arr)
+		return (0);
 	num_arr = make_num_arr(num_arr, size, argv);
 	check_arr(num_arr);
 	is_sorted(num_arr, size);
-	
 	return (0);
 }
