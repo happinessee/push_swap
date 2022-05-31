@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:50:55 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/05/31 19:53:45 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/05/31 20:01:44 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,8 @@ void	is_sorted(int *num_arr, int size)
 			max = tmp;
 			cnt += 1;
 		}
+		else
+			return ;
 		idx++;
 	}
 	if (cnt == size)
