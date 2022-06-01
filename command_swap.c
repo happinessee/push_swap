@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:18:19 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/05/31 20:36:29 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/01 12:32:42 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ void	sb(t_stack stack)
 }
 
 void	ss(t_stack stack)
-[
+{
 	
-]
+}
