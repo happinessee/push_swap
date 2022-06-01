@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:49:09 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/05/31 20:35:32 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/01 16:05:13 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ typedef struct s_stack
 	t_list	*b_bot;
 	int		b_size;
 }	t_stack;
+
+/* commands */
 
 
 /* utils */
