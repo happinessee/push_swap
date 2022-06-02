@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:50:55 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/02 14:47:58 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/02 17:50:39 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-/* for check */
+/* for check, need delete */
 #include <stdio.h>
 
 void	error(void)
@@ -133,6 +133,39 @@ void	is_sorted(int *num_arr, int size)
 		exit(0);
 }
 
+t_list	*get_list(int *num_arr, int size)
+{
+	t_list	*list;
+	t_list	*tmp;
+	int		idx;
+
+	idx = 1;
+	list->content = num_arr[0];
+	tmp = list;
+	while (idx < size)
+	{
+		list = list->next;
+		list->content = num_arr[idx];
+	}
+	list->next = 0;
+	return (tmp);
+}
+
+t_stack	*init_stack(t_list *list, int size)
+{
+	t_stack	*stack;
+
+	stack->a_top = list;
+	stack->a_size = size;
+	while (list->next)
+		list = list->next;
+	stack->a_bot = list;
+	stack->b_bot = 0;
+	stack->b_top = 0;
+	stack->b_size = 0;
+	return (stack);
+}
+
 int	main(int argc, char **argv)
 {
 	int		*num_arr;
@@ -140,7 +173,7 @@ int	main(int argc, char **argv)
 
 	size = get_size(argc, argv);
 	if (argc < 2)
-		error();
+		return (0);
 	num_arr = malloc(sizeof(int) * (get_size(argc, argv) + 1));
 	if (num_arr)
 		return (0);
