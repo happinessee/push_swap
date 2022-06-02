@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:50:55 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/05/31 20:01:44 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/02 14:47:58 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,5 +147,6 @@ int	main(int argc, char **argv)
 	num_arr = make_num_arr(num_arr, size, argv);
 	check_arr(num_arr);
 	is_sorted(num_arr, size);
+	
 	return (0);
 }

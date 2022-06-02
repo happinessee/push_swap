@@ -6,6 +6,11 @@ CFLAGS = -Wall -Wextra -Werror
 SRCS =	main.c \
 		ft_split.c \
 		push_swap_utils.c \
+		command_push.c \
+		command_rr.c \
+		command_rrr.c \
+		command_swap.c \
+		
 
 INCS = push_swap.h
 
