@@ -1,4 +1,5 @@
 NAME = push_swap
+NAME_BONUS = checker
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -10,7 +11,10 @@ SRCS =	main.c \
 		command_rr.c \
 		command_rrr.c \
 		command_swap.c \
-		
+		lst_init.c \
+		lst_init2.c \
+		sort_algo.c \
+
 
 INCS = push_swap.h
 
@@ -34,6 +38,6 @@ re :
 	make fclean
 	make all
 
-bonus : $(NAME)
+bonus : $(NAME_BONUS)
 
 .PHONY : all clean re bonus fclean
