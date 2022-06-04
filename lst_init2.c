@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:23:17 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/03 18:36:27 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/04 18:23:08 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,20 +67,30 @@ void	is_sorted(int *num_arr, int size)
 		exit(0);
 }
 
-int	*pre_process(int *num_arr, int size)
+int	*pre_process(int *num_arr)
 {
 	int	i;
 	int	j;
 	int	min;
+	int	tmp;
 
 	i = 0;
 	j = 0;
-	min = 0;
 	while (num_arr[i])
 	{
+		j = i;
+		min = 2147483647;
 		while (num_arr[j])
 		{
-			
+			if (min > num_arr[j])
+			{
+				min = num_arr[j];
+				tmp = j;
+			}
+			j++;
 		}
+		num_arr[tmp] = i;
+		i++;
 	}
+	return (num_arr);
 }

@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:49:09 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/03 18:19:29 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/04 18:31:13 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,12 @@ void	rrr(t_stack *stack);
 void	is_sorted(int *num_arr, int size);
 void	check_arr(int *num_arr);
 int		get_size(int argc, char **argv);
-void	clear(char **str)
+void	clear(char **str);
 
 int		*make_num_arr(int *num_arr, int size, char **argv);
 t_list	*get_list(int *num_arr, int size);
 t_stack	*init_stack(t_list *list, int size);
-
+int		*pre_process(int *num_arr);
 
 /* utils */
 void	error(void);

@@ -6,13 +6,13 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 14:30:18 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/03 18:29:43 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/04 19:16:26 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	quick_sort(t_stack *stack)
+void	sort(t_stack *stack)
 {
 	
 }
