@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:19:59 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/03 18:24:19 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/06 18:24:25 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ t_list	*get_list(int *num_arr, int size)
 	int		idx;
 
 	idx = 1;
+	list = (t_list *)malloc(sizeof(t_list));
 	list->content = num_arr[0];
 	tmp = list;
 	while (idx < size)
@@ -98,6 +99,7 @@ t_stack	*init_stack(t_list *list, int size)
 {
 	t_stack	*stack;
 
+	stack = (t_stack *)malloc(sizeof(t_stack));
 	stack->a_top = list;
 	stack->a_size = size;
 	while (list->next)

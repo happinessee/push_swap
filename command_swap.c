@@ -6,11 +6,13 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:18:19 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/01 16:21:35 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/06 18:20:35 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+#include <unistd.h>
 
 void	sa(t_stack *stack)
 {
