@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:49:09 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/06 17:26:39 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/07 15:57:41 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ void	rrr(t_stack *stack);
 void	devide_init(t_stack *stack);
 void	sort_basic3(t_stack *stack);
 void	sort_basic2(t_stack *stack);
+t_list	*get_stack_min(t_list *lst);
+t_list	*get_stack_max(t_list *lst);
 
 /* check */
 void	is_sorted(int *num_arr, int size);

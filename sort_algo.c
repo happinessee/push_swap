@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 14:30:18 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/06 18:25:10 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/07 14:41:20 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	sort(t_stack *stack)
 {
-	(void)stack;
+	int		a;
+	int		b;
+	
 }
 
 void	sort_basic2(t_stack *stack)
