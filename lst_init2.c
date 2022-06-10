@@ -6,13 +6,14 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:23:17 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/04 18:23:08 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/06 18:24:51 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 #include <unistd.h>
+#include <stdlib.h>
 
 void	error(void)
 {

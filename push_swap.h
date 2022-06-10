@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:49:09 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/04 18:31:13 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/08 16:31:05 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,14 @@ void	rr(t_stack *stack);
 void	rra(t_stack *stack);
 void	rrb(t_stack *stack);
 void	rrr(t_stack *stack);
+
+/* sort */
+void	devide_init(t_stack *stack);
+void	sort_basic3(t_stack *stack);
+void	sort_basic2(t_stack *stack);
+t_list	*get_stack_min(t_list *lst);
+t_list	*get_stack_max(t_list *lst);
+int		find_moveless_idx(int num, int tmp, t_stack *stack);
 
 /* check */
 void	is_sorted(int *num_arr, int size);
