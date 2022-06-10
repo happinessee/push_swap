@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 16:31:15 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/08 16:58:59 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/10 17:24:15 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,17 @@ void	get_min_commands(t_stack *stack)
 	while (idx < stack->b_size)
 	{
 		tmp = b->content;
-		a_loca = 
+		a_loca = set_loca(tmp, stack);
+		if (idx >= (stack->b_size + 1) / 2)
+			b_loca = (stack->b_size - idx) * -1;
+		else
+			b_loca = idx;
+		if (idx == 0 || )
+		{
+			
+		}
+		b = b->next;
+		idx++;
 	}
 }
 
@@ -50,12 +60,12 @@ int	set_loca(int num, t_stack *stack)
 
 int	set_loca_bot(t_stack *stack)
 {
-	int		ret;
+	int		idx;
 	int		tmp;
 	int		min;
 	t_list	*a;
 
-	ret = 0;
+	idx = 0;
 	a = stack->a_top;
 	min = get_stack_min(a);
 	while (a)
@@ -66,17 +76,50 @@ int	set_loca_bot(t_stack *stack)
 			break;
 		}
 		a = a->next;
-		ret++;
+		idx++;
 	}
-	if ()
+	make_idx_best(idx, stack);
+	return (idx);
 }
 
 int	set_loca_top(t_stack *stack)
 {
+	int		idx;
+	int		tmp;
+	int		max;
+	t_list	*a;
 
+	idx = 0;
+	a = stack->a_top;
+	max = get_stack_max(a);
+	while (a)
+	{
+		tmp = a->content;
+		if (tmp == max)
+		{
+			break;
+		}
+		a = a->next;
+		idx++;
+	}
+	make_idx_best(idx, stack);
+	return (idx);
 }
 
-int	set_loca_mid(t_stack *stack)
+int	set_loca_mid(int num, t_stack *stack)
 {
+	t_list	*a;
+	int		idx;
 
+	idx = 0;
+	a = stack->a_top;
+	while (a->next)
+	{
+		if (num > a->content && num < a->next->content)
+			break;
+		idx++;
+		a = a->next;
+	}
+	make_idx_best(idx, stack);
+	return (idx);
 }
