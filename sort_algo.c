@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 14:30:18 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/10 15:26:58 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/10 15:27:42 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,6 @@ void	quick_sort(t_stack *stack)
 	
 }
 
-<<<<<<< HEAD
-void	greedy_sort(t_stack *stack)
-{
-
-=======
 void	sort_basic2(t_stack *stack)
 {
 	t_list	*tmp;
