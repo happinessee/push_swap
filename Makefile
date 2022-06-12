@@ -16,6 +16,7 @@ SRCS =	main.c \
 		sort_algo.c \
 		sort_algo2.c \
 		sort_algo3.c \
+		sort_algo4.c
 
 INCS = push_swap.h
 

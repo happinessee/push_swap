@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 18:36:17 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/12 14:37:08 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/12 14:42:13 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,10 @@ int	make_idx_best(int idx, t_stack *stack)
 	return (idx);
 }
 
-t_list	*get_stack_min(t_list *lst)
+int	get_stack_min(t_list *lst)
 {
-	int		idx;
 	int		min;
 
-	idx = 0;
 	min = 2147483647;
 	while (lst)
 	{
@@ -37,12 +35,10 @@ t_list	*get_stack_min(t_list *lst)
 	return (min);
 }
 
-t_list	*get_stack_max(t_list *lst)
+int	get_stack_max(t_list *lst)
 {
-	int		idx;
 	int		max;
 
-	idx = 0;
 	max = -1;
 	while (lst)
 	{
@@ -55,7 +51,6 @@ t_list	*get_stack_max(t_list *lst)
 	return (max);
 }
 
-// tmp는  min, max 값
 int	find_moveless_idx(int tmp, t_stack *stack)
 {
 	int		idx;
