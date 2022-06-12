@@ -6,13 +6,13 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 16:31:15 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/10 17:24:15 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/11 00:18:31 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	get_min_commands(t_stack *stack)
+void	get_min_commands(t_stack *stack, int *a_idx, int *b_idx)
 {
 	int		idx;
 	t_list	*b;
@@ -30,9 +30,10 @@ void	get_min_commands(t_stack *stack)
 			b_loca = (stack->b_size - idx) * -1;
 		else
 			b_loca = idx;
-		if (idx == 0 || )
+		if (idx == 0 || check_and_switch(*a_idx, *b_idx, a_loca, b_loca))
 		{
-			
+			*a_idx = a_loca;
+			*b_idx = b_loca;
 		}
 		b = b->next;
 		idx++;
@@ -53,7 +54,7 @@ int	set_loca(int num, t_stack *stack)
 	}
 	else
 	{
-		res = set_loca_mid(stack);
+		res = set_loca_mid(num, stack);
 	}
 	return (res);
 }

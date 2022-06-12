@@ -6,18 +6,11 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 14:30:18 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/10 15:27:42 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/12 14:29:37 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	quick_sort(t_stack *stack)
-{
-	int		a;
-	int		b;
-	
-}
 
 void	sort_basic2(t_stack *stack)
 {
@@ -75,4 +68,39 @@ void	devide_init(t_stack *stack)
 		tmp = tmp->next;
 		idx++;
 	}
+}
+
+void	sort_big(t_stack *stack)
+{
+	int	a_idx;
+	int	b_idx;
+	
+	devide_init(stack);
+	while (stack->a_size > 3)
+		pb(stack);
+	if (stack->a_size == 3)
+		sort_basic3(stack);
+	if (stack->a_size == 2)
+		sort_basic2(stack);
+	while (stack->b_size)
+	{
+		a_idx = 0;
+		b_idx = 0;
+		get_min_commands(stack, &a_idx, &b_idx);
+		rotate_equal(stack, &a_idx, &b_idx);
+		ratate_a(stack, a_idx);
+		rotate_b(stack, b_idx);
+		pa(stack);
+	}
+	
+}
+
+void	sort(t_stack *stack)
+{
+	if (stack->a_size == 2)
+		sort_basic2(stack);
+	else if (stack->a_size == 3)
+		sort_basic3(stack);
+	else
+		sort_big(stack);
 }

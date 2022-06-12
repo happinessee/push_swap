@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 18:36:17 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/08 17:14:45 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/12 14:37:08 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ t_list	*get_stack_max(t_list *lst)
 }
 
 // tmp는  min, max 값
-int	find_moveless_idx(int num, int tmp, t_stack *stack)
+int	find_moveless_idx(int tmp, t_stack *stack)
 {
 	int		idx;
 	t_list	*a;
