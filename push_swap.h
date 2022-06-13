@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:49:09 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/13 17:58:12 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/13 18:21:03 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stddef.h>
 
-/* del */
+/* need del */
 # include <stdio.h>
 
 typedef struct s_list
@@ -26,6 +26,8 @@ typedef struct s_list
 
 typedef struct s_stack
 {
+	int		*num_arr;
+
 	t_list	*a_top;
 	t_list	*a_bot;
 	int		a_size;
@@ -75,7 +77,7 @@ void	clear(char **str);
 
 int		*make_num_arr(int *num_arr, int size, char **argv);
 t_list	*get_list(int *num_arr, int size);
-t_stack	init_stack(t_list *list, int size);
+t_stack	init_stack(t_list *list, int *num_arr, int size);
 
 /* utils */
 void	error(void);

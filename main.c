@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:50:55 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/13 17:57:48 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/13 18:20:42 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 	num_arr = make_num_arr(num_arr, size, argv);
 	check_overlap_arr(num_arr);
 	is_sorted(num_arr, size);
-	stack = init_stack(get_list(num_arr, size), size);
+	stack = init_stack(get_list(num_arr, size), num_arr, size);
 	sort(&stack);
 	return (0);
 }

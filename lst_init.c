@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:19:59 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/13 18:01:50 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/13 18:20:04 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,10 +93,11 @@ t_list	*get_list(int *num_arr, int size)
 	return (tmp);
 }
 
-t_stack	init_stack(t_list *list, int size)
+t_stack	init_stack(t_list *list, int *num_arr, int size)
 {
 	t_stack	stack;
 
+	stack.num_arr = num_arr;
 	stack.a_top = list;
 	stack.a_size = size;
 	while (list->next)
