@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:19:59 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/06 18:24:25 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/13 16:24:51 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,10 @@ int	*make_num_arr(int *num_arr, int size, char **argv)
 			clear(tmp_str);
 		}
 		else
+		{
 			num_arr[cnt] = ft_atoi(argv[idx]);
-		cnt++;
+			cnt++;
+		}
 	}
 	return (num_arr);
 }
@@ -88,25 +90,26 @@ t_list	*get_list(int *num_arr, int size)
 	tmp = list;
 	while (idx < size)
 	{
+		list->next = (t_list *)malloc(sizeof(t_list));
 		list = list->next;
 		list->content = num_arr[idx];
+		idx++;
 	}
 	list->next = 0;
 	return (tmp);
 }
 
-t_stack	*init_stack(t_list *list, int size)
+t_stack	init_stack(t_list *list, int size)
 {
-	t_stack	*stack;
+	t_stack	stack;
 
-	stack = (t_stack *)malloc(sizeof(t_stack));
-	stack->a_top = list;
-	stack->a_size = size;
+	stack.a_top = list;
+	stack.a_size = size;
 	while (list->next)
 		list = list->next;
-	stack->a_bot = list;
-	stack->b_bot = 0;
-	stack->b_top = 0;
-	stack->b_size = 0;
+	stack.a_bot = list;
+	stack.b_bot = 0;
+	stack.b_top = 0;
+	stack.b_size = 0;
 	return (stack);
 }

@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 17:49:17 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/06 18:20:23 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/13 17:48:02 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	rra(t_stack *stack)
 	tmp->next = stack->a_top;
 	stack->a_top = tmp;
 	tmp = stack->a_top;
-	while (idx < stack->a_size - 1)
+	while (++idx < stack->a_size)
 		tmp = tmp->next;
 	tmp->next = 0;
 	stack->a_bot = tmp;

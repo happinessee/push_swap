@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:23:17 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/06 18:24:51 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/13 16:02:59 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	error(void)
 	exit(1);
 }
 
-void	check_arr(int *num_arr)
+void	check_overlap_arr(int *num_arr)
 {
 	int	idx;
 	int	idx2;
@@ -30,8 +30,6 @@ void	check_arr(int *num_arr)
 	while (num_arr[idx + 1])
 	{
 		idx2 = idx + 1;
-		if (!(ft_isdigit(num_arr[idx])))
-			error();
 		while (num_arr[idx2])
 		{
 			if (num_arr[idx] == num_arr[idx2])
@@ -68,30 +66,21 @@ void	is_sorted(int *num_arr, int size)
 		exit(0);
 }
 
-int	*pre_process(int *num_arr)
+void	check_wrd(char **argv)
 {
 	int	i;
-	int	j;
-	int	min;
-	int	tmp;
+	int j;
 
-	i = 0;
-	j = 0;
-	while (num_arr[i])
+	i = 1;
+	while (argv[i])
 	{
-		j = i;
-		min = 2147483647;
-		while (num_arr[j])
+		j = 0;
+		while (argv[i][j])
 		{
-			if (min > num_arr[j])
-			{
-				min = num_arr[j];
-				tmp = j;
-			}
+			if (!(ft_isdigit(argv[i][j])))
+				error();
 			j++;
 		}
-		num_arr[tmp] = i;
 		i++;
 	}
-	return (num_arr);
 }

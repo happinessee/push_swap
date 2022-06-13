@@ -2,7 +2,7 @@ NAME = push_swap
 NAME_BONUS = checker
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 SRCS =	main.c \
 		ft_split.c \
@@ -26,7 +26,7 @@ OBJS = $(SRCS:%.c=%.o)
 	$(CC) $(CFLAGS) -c $< -o $@ -I .
 
 $(NAME) : $(OBJS)
-	$(CC) -o $(NAME) $(CFLAGS) $(OBJS)
+	$(CC) -o $(NAME) $(CFLAGS) $(OBJS) 
 
 all : $(NAME)
 

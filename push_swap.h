@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:49:09 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/12 14:45:09 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/13 16:15:01 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define PUSH_SWAP_H
 
 # include <stddef.h>
+
+/* del */
+# include <stdio.h>
 
 typedef struct s_list
 {
@@ -66,17 +69,17 @@ int		make_idx_best(int idx, t_stack *stack);
 
 /* check */
 void	is_sorted(int *num_arr, int size);
-void	check_arr(int *num_arr);
+void	check_overlap_arr(int *num_arr);
 int		get_size(int argc, char **argv);
 void	clear(char **str);
 
 int		*make_num_arr(int *num_arr, int size, char **argv);
 t_list	*get_list(int *num_arr, int size);
-t_stack	*init_stack(t_list *list, int size);
-int		*pre_process(int *num_arr);
+t_stack	init_stack(t_list *list, int size);
 
 /* utils */
 void	error(void);
+void	check_wrd(char **argv);
 size_t	count_words(char *str, char c);
 char	**ft_split(char const *s, char c);
 size_t	ft_strlen(const char *s);

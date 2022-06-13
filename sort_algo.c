@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 14:30:18 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/12 14:40:21 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/13 17:36:56 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,27 +23,29 @@ void	sort_basic2(t_stack *stack)
 
 void	sort_basic3(t_stack *stack)
 {
-	t_list	*tmp;
-	t_list	*tmp2;
+	int	content1;
+	int content2;
+	int content3;
 
-	tmp = stack->a_top->next;
-	tmp2 = tmp->next;
-	if (stack->a_top->content > tmp->content && tmp->content > tmp2->content)
-	{
-		sa(stack);
-		rra(stack);
-	}
-	else if (stack->a_top->content > tmp->content && tmp->content < tmp2->content)
-		rra(stack);
-	else if (stack->a_top->content < tmp->content && tmp->content > tmp2->content)
+	content1 = stack->a_top->content;
+	content2 = stack->a_top->next->content;
+	content3 = stack->a_top->next->next->content;
+	if (content1 < content2 && content2 > content3 && content1 < content3)
 	{
 		sa(stack);
 		ra(stack);
 	}
-	else if (stack->a_top->content < tmp->content && tmp->content > tmp2->content)
-		rra(stack);
-	else if (stack->a_top->content > tmp->content && tmp->content < tmp2->content)
+	else if (content1 > content2 && content2 < content3 && content1 < content3)
 		sa(stack);
+	else if (content1 < content2 && content2 > content3 && content1 > content3)
+		rra(stack);
+	else if (content1 > content2 && content2 < content3 && content1 > content3)
+		ra(stack);
+	else if (content1 > content2 && content2 > content3 && content1 > content3)
+	{
+		sa(stack);
+		rra(stack);
+	}
 }
 
 void	devide_init(t_stack *stack)
