@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:23:17 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/13 16:02:59 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/13 17:57:43 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	is_sorted(int *num_arr, int size)
 void	check_wrd(char **argv)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = 1;
 	while (argv[i])

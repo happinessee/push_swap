@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 16:31:15 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/11 00:18:31 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/13 17:59:23 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	get_min_commands(t_stack *stack, int *a_idx, int *b_idx)
 	int		tmp;
 	int		a_loca;
 	int		b_loca;
-	
+
 	idx = 0;
 	b = stack->b_top;
 	while (idx < stack->b_size)
@@ -74,7 +74,7 @@ int	set_loca_bot(t_stack *stack)
 		tmp = a->content;
 		if (tmp == min)
 		{
-			break;
+			break ;
 		}
 		a = a->next;
 		idx++;
@@ -98,7 +98,7 @@ int	set_loca_top(t_stack *stack)
 		tmp = a->content;
 		if (tmp == max)
 		{
-			break;
+			break ;
 		}
 		a = a->next;
 		idx++;
@@ -117,7 +117,7 @@ int	set_loca_mid(int num, t_stack *stack)
 	while (a->next)
 	{
 		if (num > a->content && num < a->next->content)
-			break;
+			break ;
 		idx++;
 		a = a->next;
 	}

@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:49:09 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/13 16:15:01 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/13 17:58:12 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_stack
 	t_list	*a_top;
 	t_list	*a_bot;
 	int		a_size;
-	
+
 	t_list	*b_top;
 	t_list	*b_bot;
 	int		b_size;

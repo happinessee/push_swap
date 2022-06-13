@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:18:19 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/06 18:20:35 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/13 17:56:57 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	sb(t_stack *stack)
 void	ss(t_stack *stack)
 {
 	int	tmp;
+
 	if (stack->a_size < 2)
 		return ;
 	tmp = stack->a_top->next->content;

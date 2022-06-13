@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:50:04 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/13 16:39:24 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/13 17:56:26 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 void	pa(t_stack *stack)
 {
 	t_list	*tmp;
+
 	if (stack->b_size < 1)
 		return ;
 	tmp = stack->b_top;
@@ -42,7 +43,7 @@ void	pa(t_stack *stack)
 void	pb(t_stack *stack)
 {
 	t_list	*tmp;
-	
+
 	if (stack->a_size < 1)
 		return ;
 	tmp = stack->a_top;

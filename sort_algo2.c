@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 18:36:17 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/12 14:42:13 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/13 17:59:02 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	find_moveless_idx(int tmp, t_stack *stack)
 	while (a)
 	{
 		if (a->content == tmp)
-			break;
+			break ;
 		a = a->next;
 		idx++;
 	}

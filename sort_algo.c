@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 14:30:18 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/13 17:36:56 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/13 17:58:50 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	sort_basic2(t_stack *stack)
 void	sort_basic3(t_stack *stack)
 {
 	int	content1;
-	int content2;
-	int content3;
+	int	content2;
+	int	content3;
 
 	content1 = stack->a_top->content;
 	content2 = stack->a_top->next->content;
@@ -76,7 +76,7 @@ void	sort_big(t_stack *stack)
 {
 	int	a_idx;
 	int	b_idx;
-	
+
 	devide_init(stack);
 	while (stack->a_size > 3)
 		pb(stack);
@@ -94,7 +94,6 @@ void	sort_big(t_stack *stack)
 		rotate_b(stack, b_idx);
 		pa(stack);
 	}
-	
 }
 
 void	sort(t_stack *stack)

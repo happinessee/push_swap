@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:19:59 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/13 16:24:51 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/13 18:01:50 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,17 +63,11 @@ int	*make_num_arr(int *num_arr, int size, char **argv)
 			i = -1;
 			tmp_str = ft_split(argv[idx], '\n');
 			while (tmp_str[++i])
-			{
-				num_arr[cnt] = ft_atoi(tmp_str[i]);
-				cnt++;
-			}
+				num_arr[cnt++] = ft_atoi(tmp_str[i]);
 			clear(tmp_str);
 		}
 		else
-		{
-			num_arr[cnt] = ft_atoi(argv[idx]);
-			cnt++;
-		}
+			num_arr[cnt++] = ft_atoi(argv[idx]);
 	}
 	return (num_arr);
 }

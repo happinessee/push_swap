@@ -6,14 +6,13 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:50:55 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/13 17:49:13 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/13 17:57:48 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 #include <stdlib.h>
-#include <stdio.h>
 
 int	main(int argc, char **argv)
 {

@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 17:23:17 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/12 14:38:21 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/13 18:00:13 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	sort_last(t_stack *stack)
 {
 	int	idx0;
 	int	min;
-	
+
 	min = get_stack_min(stack->a_top);
 	idx0 = find_moveless_idx(min, stack);
 	while (idx0)
