@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 14:30:18 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/13 18:29:47 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/13 19:34:31 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	devide_init(t_stack *stack)
 	const int	p1 = stack->num_arr[stack->a_size / 3];
 	const int	p2 = stack->num_arr[stack->a_size * 2 / 3];
 	int			idx;
-	printf("p1, p2 : %d %d\n", p1, p2);
+
 	idx = 0;
 	while (idx < stack->a_size)
 	{
