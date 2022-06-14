@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:19:59 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/13 18:20:04 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/14 15:00:18 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	get_size(int argc, char **argv)
 	while (idx < argc)
 	{
 		if (ft_strlen(argv[idx]) > 1)
-			cnt += count_words(argv[idx], '\n');
+			cnt += count_words(argv[idx], ' ');
 		else
 			cnt += 1;
 		idx++;
@@ -39,12 +39,12 @@ void	clear(char **str)
 	idx = 0;
 	while (str[idx])
 	{
-		free(str[idx]);
 		str[idx] = 0;
+		free(str[idx]);
 		idx++;
 	}
-	free(str);
 	str = 0;
+	free(str);
 }
 
 int	*make_num_arr(int *num_arr, int size, char **argv)
@@ -56,18 +56,19 @@ int	*make_num_arr(int *num_arr, int size, char **argv)
 
 	idx = 0;
 	cnt = 0;
-	while (++idx <= size)
+	while (cnt <= size)
 	{
 		if (ft_strlen(argv[idx]) > 1)
 		{
 			i = -1;
-			tmp_str = ft_split(argv[idx], '\n');
+			tmp_str = ft_split(argv[idx], ' ');
 			while (tmp_str[++i])
 				num_arr[cnt++] = ft_atoi(tmp_str[i]);
 			clear(tmp_str);
 		}
 		else
 			num_arr[cnt++] = ft_atoi(argv[idx]);
+		idx++;
 	}
 	return (num_arr);
 }
