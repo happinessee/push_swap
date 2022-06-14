@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 18:36:17 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/13 17:59:02 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/14 18:05:18 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	make_idx_best(int idx, t_stack *stack)
 {
-	if (idx >= (stack->a_size + 1 / 2))
+	if (idx >= (stack->a_size + 1) / 2)
 		idx = (stack->a_size - idx) * -1;
 	return (idx);
 }

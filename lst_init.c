@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:19:59 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/14 17:40:41 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/14 21:16:00 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ void	clear(char **str)
 	idx = 0;
 	while (str[idx])
 	{
-		str[idx] = 0;
 		free(str[idx]);
+		str[idx] = 0;
 		idx++;
 	}
-	str = 0;
 	free(str);
+	str = 0;
 }
 
 int	*make_num_arr(int *num_arr, int size, char **argv)

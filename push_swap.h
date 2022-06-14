@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:49:09 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/14 17:26:09 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/14 21:19:15 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,6 @@ char	**ft_split(char const *s, char c);
 size_t	ft_strlen(const char *s);
 int		ft_isdigit(int c);
 int		ft_atoi(const char *str);
-void	ft_lstclear(t_list **lst);
+void	ft_lstclear(t_list *lst);
 
 #endif
