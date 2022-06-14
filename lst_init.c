@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:19:59 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/14 17:02:48 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/14 17:40:41 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ int	*make_num_arr(int *num_arr, int size, char **argv)
 	int		i;
 	char	**tmp_str;
 
-	idx = 0;
+	idx = 1;
 	cnt = 0;
-	while (cnt <= size)
+	while (cnt < size)
 	{
 		if (ft_strlen(argv[idx]) > 1)
 		{
