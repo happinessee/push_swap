@@ -6,13 +6,14 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 14:01:56 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/13 15:09:51 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/14 16:04:00 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 #include <stddef.h>
+#include <stdlib.h>
 
 size_t	ft_strlen(const char *s)
 {
@@ -62,4 +63,17 @@ int	ft_atoi(const char *str)
 int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
+}
+
+void	ft_lstclear(t_list **lst)
+{
+	t_list	*tmp;
+
+	while (*lst)
+	{
+		tmp = (*lst)->next;
+		free(*lst);
+		*lst = tmp;
+	}
+	*lst = 0;
 }
