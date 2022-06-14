@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:23:17 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/13 18:33:58 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/14 14:26:47 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,8 @@ void	check_wrd(char **argv)
 		j = 0;
 		while (argv[i][j])
 		{
-			if (!(ft_isdigit(argv[i][j]) || argv[i][j] == ' '))
+			if (!(ft_isdigit(argv[i][j]) || argv[i][j] == ' '\
+				|| argv[i][j] == '+' || argv[i][j] == '-'))
 				error();
 			j++;
 		}

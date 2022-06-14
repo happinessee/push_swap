@@ -18,15 +18,22 @@ SRCS =	main.c \
 		sort_algo3.c \
 		sort_algo4.c
 
+SRCS_BNS =	checker.c \
+			checker_utils.c
+
 INCS = push_swap.h
 
 OBJS = $(SRCS:%.c=%.o)
+
+OBJS_BNS = $(SRCS_BNS:%.c=%.o)
 
 %.o : %.c
 	$(CC) $(CFLAGS) -c $< -o $@ -I .
 
 $(NAME) : $(OBJS)
 	$(CC) -o $(NAME) $(CFLAGS) $(OBJS) 
+
+$(NAME_BONUS) : $(OBJS_BNS)
 
 all : $(NAME)
 
