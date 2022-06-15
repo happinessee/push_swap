@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 16:31:15 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/13 17:59:23 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/15 18:00:03 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,7 @@ int	set_loca_bot(t_stack *stack)
 		a = a->next;
 		idx++;
 	}
-	make_idx_best(idx, stack);
-	return (idx);
+	return (make_idx_best(idx, stack));
 }
 
 int	set_loca_top(t_stack *stack)
@@ -103,8 +102,8 @@ int	set_loca_top(t_stack *stack)
 		a = a->next;
 		idx++;
 	}
-	make_idx_best(idx, stack);
-	return (idx);
+	idx++;
+	return (make_idx_best(idx, stack));
 }
 
 int	set_loca_mid(int num, t_stack *stack)
@@ -112,7 +111,7 @@ int	set_loca_mid(int num, t_stack *stack)
 	t_list	*a;
 	int		idx;
 
-	idx = 0;
+	idx = 1;
 	a = stack->a_top;
 	while (a->next)
 	{
@@ -121,6 +120,5 @@ int	set_loca_mid(int num, t_stack *stack)
 		idx++;
 		a = a->next;
 	}
-	make_idx_best(idx, stack);
-	return (idx);
+	return (make_idx_best(idx, stack));
 }

@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 18:36:17 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/15 16:03:01 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/15 17:58:20 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,5 @@ int	find_moveless_idx(int tmp, t_stack *stack)
 		a = a->next;
 		idx++;
 	}
-	idx = make_idx_best(idx, stack);
-	return (idx);
+	return (make_idx_best(idx, stack));
 }

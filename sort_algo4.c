@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 17:23:17 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/13 18:00:13 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/15 18:37:19 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ int	check_and_switch(int a, int b, int a_loca, int b_loca)
 
 void	rotate_equal(t_stack *stack, int *a_idx, int *b_idx)
 {
-	while (*a_idx > 0 && *b_idx > 0)
+	while (*a_idx && *b_idx && *a_idx > 0 && *b_idx > 0)
 	{
 		rr(stack);
 		*a_idx = *a_idx - 1;
 		*b_idx = *b_idx - 1;
 	}
-	while (*a_idx < 0 && *b_idx < 0)
+	while (*a_idx && *b_idx && *a_idx < 0 && *b_idx < 0)
 	{
 		rrr(stack);
 		*a_idx = *a_idx + 1;
@@ -51,12 +51,12 @@ void	rotate_a(t_stack *stack, int a_idx)
 		if (a_idx > 0)
 		{
 			ra(stack);
-			a_idx -= 1;
+			a_idx--;
 		}
 		else
 		{
 			rra(stack);
-			a_idx += 1;
+			a_idx++;
 		}
 	}
 }
@@ -68,12 +68,12 @@ void	rotate_b(t_stack *stack, int b_idx)
 		if (b_idx > 0)
 		{
 			rb(stack);
-			b_idx -= 1;
+			b_idx--;
 		}
 		else
 		{
 			rrb(stack);
-			b_idx += 1;
+			b_idx++;
 		}
 	}
 }
