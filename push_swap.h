@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:49:09 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/14 21:19:15 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/15 17:03:17 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,5 @@ size_t	ft_strlen(const char *s);
 int		ft_isdigit(int c);
 int		ft_atoi(const char *str);
 void	ft_lstclear(t_list *lst);
-
+int		*sort_num_arr(int *num_arr, int size);
 #endif

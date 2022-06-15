@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 18:36:17 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/14 18:05:18 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/15 16:03:01 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	get_stack_min(t_list *lst)
 {
 	int		min;
 
-	min = 2147483647;
+	min = lst->content;
 	while (lst)
 	{
 		if (lst->content < min)
@@ -39,7 +39,7 @@ int	get_stack_max(t_list *lst)
 {
 	int		max;
 
-	max = -1;
+	max = lst->content;
 	while (lst)
 	{
 		if (lst->content > max)

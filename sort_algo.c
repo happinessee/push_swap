@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 14:30:18 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/14 17:51:42 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/15 17:08:32 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ void	sort_basic3(t_stack *stack)
 
 void	devide_init(t_stack *stack)
 {
-	const int	p1 = stack->num_arr[stack->a_size / 3];
-	const int	p2 = stack->num_arr[stack->a_size * 2 / 3];
-	int			idx;
+	int	p1 = stack->num_arr[(int)(stack->a_size / 3)];
+	int	p2 = stack->num_arr[(int)(stack->a_size * 2 / 3)];
+	int	idx;
 
 	idx = stack->a_size;
 	while (idx)

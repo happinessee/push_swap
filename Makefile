@@ -7,6 +7,7 @@ CFLAGS = -Wall -Wextra -Werror -g
 SRCS =	main.c \
 		ft_split.c \
 		push_swap_utils.c \
+		push_swap_utils2.c \
 		command_push.c \
 		command_rr.c \
 		command_rrr.c \
@@ -16,7 +17,8 @@ SRCS =	main.c \
 		sort_algo.c \
 		sort_algo2.c \
 		sort_algo3.c \
-		sort_algo4.c
+		sort_algo4.c \
+
 
 SRCS_BNS =	checker.c \
 			checker_utils.c
