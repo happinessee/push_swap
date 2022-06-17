@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 14:30:18 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/15 18:00:30 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/17 18:39:50 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ void	sort_big(t_stack *stack)
 		rotate_a(stack, a_idx);
 		rotate_b(stack, b_idx);
 		pa(stack);
+		printf("b_size : %d\n", stack->b_size);
 	}
 	sort_last(stack);
 }

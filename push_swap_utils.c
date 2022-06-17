@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 14:01:56 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/14 21:18:57 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/17 18:42:47 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,6 @@ void	ft_lstclear(t_list *lst)
 		free(lst);
 		lst = tmp;
 	}
+	printf("lstclear ok\n");
 	lst = 0;
 }
