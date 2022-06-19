@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:50:04 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/13 19:52:49 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/19 16:47:07 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ void	pa(t_stack *stack)
 		return ;
 	tmp = stack->b_top;
 	if (stack->b_size > 1)
+	{
 		stack->b_top = stack->b_top->next;
+		stack->b_top->prev = 0;
+	}
 	if (stack->a_size == 0)
 	{
 		tmp->next = 0;
@@ -32,6 +35,7 @@ void	pa(t_stack *stack)
 	else
 	{
 		tmp->next = stack->a_top;
+		stack->a_top->prev = tmp;
 		stack->a_top = tmp;
 	}
 	stack->a_size += 1;
@@ -47,7 +51,10 @@ void	pb(t_stack *stack)
 		return ;
 	tmp = stack->a_top;
 	if (stack->a_size > 1)
+	{
 		stack->a_top = stack->a_top->next;
+		stack->a_top->prev = 0;
+	}
 	if (stack->b_size == 0)
 	{
 		tmp->next = 0;
@@ -57,6 +64,7 @@ void	pb(t_stack *stack)
 	else
 	{
 		tmp->next = stack->b_top;
+		stack->b_top->prev = tmp;
 		stack->b_top = tmp;
 	}
 	stack->b_size += 1;

@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 16:47:47 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/13 19:48:14 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/19 16:47:59 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ void	ra(t_stack *stack)
 		return ;
 	tmp = stack->a_top;
 	stack->a_top = stack->a_top->next;
+	stack->a_top->prev = 0;
 	stack->a_bot->next = tmp;
+	tmp->prev = stack->a_top;
 	stack->a_bot = tmp;
 	stack->a_bot->next = 0;
 	write(1, "ra\n", 3);
