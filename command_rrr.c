@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 17:49:17 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/19 16:53:28 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/19 21:14:53 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,24 @@
 void	rra(t_stack *stack)
 {
 	t_list	*tmp;
-
+	printf("1rra, b, next point : %p\n", stack->b_top->next);
 	if (stack->a_size < 2)
 		return ;
 	tmp = stack->a_bot;
+	printf("2rra b, next point : %p\n", stack->b_top->next);
 	stack->a_bot = stack->a_bot->prev;
+	printf("3rra b, next point : %p\n", stack->b_top->next);
 	stack->a_bot->next = 0;
+	printf("4rra b, next point : %p\n", stack->b_top->next);
 	stack->a_top->prev = tmp;
+	printf("5rra b, next point : %p\n", stack->b_top->next);
 	tmp->next = stack->a_top;
+	printf("6 rra b, next point : %p\n", stack->b_top->next);
 	stack->a_top = tmp;
+	printf("7rra b, next point : %p\n", stack->b_top->next);
 	stack->a_top->prev = 0;
 	write(1, "rra\n", 4);
+	printf("8rra b, next point : %p\n", stack->b_top->next);
 }
 
 void	rrb(t_stack *stack)

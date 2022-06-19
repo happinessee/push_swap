@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 14:30:18 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/19 16:54:13 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/19 21:11:20 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,9 +89,13 @@ void	sort_big(t_stack *stack)
 		a_idx = 0;
 		b_idx = 0;
 		get_min_commands(stack, &a_idx, &b_idx);
+		printf("b, next point : %p\n", stack->b_top->next);
 		rotate_equal(stack, &a_idx, &b_idx);
+		printf("b, next point : %p\n", stack->b_top->next);
 		rotate_a(stack, a_idx);
+		printf("b, next point : %p\n", stack->b_top->next);
 		rotate_b(stack, b_idx);
+		printf("b, next point : %p\n", stack->b_top->next);
 		pa(stack);
 	}
 	sort_last(stack);
