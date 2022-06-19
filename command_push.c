@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:50:04 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/19 16:47:07 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/19 21:04:15 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	pa(t_stack *stack)
 	tmp = stack->b_top;
 	if (stack->b_size > 1)
 	{
+		printf("%p\n", tmp->next);
+		printf("%p\n", tmp->prev);
 		stack->b_top = stack->b_top->next;
 		stack->b_top->prev = 0;
 	}
