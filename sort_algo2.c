@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 18:36:17 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/17 18:51:03 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/19 16:55:19 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	get_stack_min(t_list *lst)
 	min = lst->content;
 	while (lst)
 	{
-		printf("%p\n", lst);
 		if (lst->content < min)
 		{
 			min = lst->content;

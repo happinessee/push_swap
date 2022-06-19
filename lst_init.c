@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:19:59 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/15 17:03:59 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/19 17:26:10 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,16 +77,20 @@ t_list	*get_list(int *num_arr, int size)
 {
 	t_list	*list;
 	t_list	*tmp;
+	t_list	*tmp2;
 	int		idx;
 
 	idx = 1;
 	list = (t_list *)malloc(sizeof(t_list));
 	list->content = num_arr[0];
+	list->prev = 0;
 	tmp = list;
 	while (idx < size)
 	{
+		tmp2 = list;
 		list->next = (t_list *)malloc(sizeof(t_list));
 		list = list->next;
+		list->prev = tmp2;
 		list->content = num_arr[idx];
 		idx++;
 	}

@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 16:47:47 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/19 16:47:59 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/19 16:50:43 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,9 @@ void	rb(t_stack *stack)
 		return ;
 	tmp = stack->b_top;
 	stack->b_top = stack->b_top->next;
+	stack->b_top->prev = 0;
 	stack->b_bot->next = tmp;
+	tmp->prev = stack->b_bot;
 	stack->b_bot = tmp;
 	stack->b_bot->next = 0;
 	write(1, "rb\n", 3);
@@ -52,14 +54,18 @@ void	rr(t_stack *stack)
 		return ;
 	tmp = stack->a_top;
 	stack->a_top = stack->a_top->next;
+	stack->a_top->prev = 0;
 	stack->a_bot->next = tmp;
+	tmp->prev = stack->a_top;
 	stack->a_bot = tmp;
-	stack->b_bot->next = 0;
+	stack->a_bot->next = 0;
 	if (stack->b_size < 2)
 		return ;
 	tmp = stack->b_top;
 	stack->b_top = stack->b_top->next;
+	stack->b_top->prev = 0;
 	stack->b_bot->next = tmp;
+	tmp->prev = stack->b_bot;
 	stack->b_bot = tmp;
 	stack->b_bot->next = 0;
 	write(1, "rr\n", 3);

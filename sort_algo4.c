@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 17:23:17 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/17 18:41:40 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/19 16:59:16 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,15 +81,10 @@ void	rotate_b(t_stack *stack, int b_idx)
 void	sort_last(t_stack *stack)
 {
 	int	idx0;
-	int	min;
 
-	min = get_stack_min(stack->a_top);
-	printf("min : %d\n", min);
-	idx0 = find_moveless_idx(min, stack);
-	printf("idx0 : %d\n", idx0);
+	idx0 = set_loca_bot(stack);
 	while (idx0)
 	{
-		printf("idx0 : %d\n", idx0);
 		if (idx0 > 0)
 		{
 			ra(stack);
