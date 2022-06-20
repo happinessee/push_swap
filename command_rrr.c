@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 17:49:17 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/20 17:44:46 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/20 17:47:08 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	rra(t_stack *stack)
 	stack->a_top = stack->a_top->prev;
 	stack->a_bot = stack->a_bot->prev;
 	write(1, "rra\n", 4);
-	printf("8rra b, next point : %p\n", stack->b_top->next);
 }
 
 void	rrb(t_stack *stack)

@@ -22,7 +22,6 @@ fi
 biggest_instruction_count=-1
 while [[ $times -gt 0 ]]; do
 	ARG=$(ruby -e "puts (1..$number).to_a.shuffle.join(' ')")
-	echo $ARG
 	./$push_swap $ARG > $result_temp_file
 	checker_result=$(cat $result_temp_file | ./$checker $ARG)
 	instruction_count=$(printf '%d' $(cat $result_temp_file | wc -l))

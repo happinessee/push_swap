@@ -6,13 +6,23 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:50:04 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/20 17:25:17 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/20 17:56:32 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 #include <unistd.h>
+
+void	size_zero(t_list *tmp, t_list **lst_top, t_list **lst_bot)
+{
+	(void)lst_top;
+	(void)lst_bot;
+	tmp->next = 0;
+	tmp->prev = 0;
+	*lst_top = tmp;
+	*lst_bot = tmp;
+}
 
 void	pa(t_stack *stack)
 {
@@ -28,12 +38,7 @@ void	pa(t_stack *stack)
 		stack->b_bot->next = stack->b_top;
 	}
 	if (stack->a_size == 0)
-	{
-		tmp->next = 0;
-		tmp->prev = 0;
-		stack->a_top = tmp;
-		stack->a_bot = tmp;
-	}
+		size_zero(tmp, &stack->a_top, &stack->a_bot);
 	else
 	{
 		tmp->next = stack->a_top;
@@ -61,12 +66,7 @@ void	pb(t_stack *stack)
 		stack->a_bot->next = stack->a_top;
 	}
 	if (stack->b_size == 0)
-	{
-		tmp->next = 0;
-		tmp->prev = 0;
-		stack->b_top = tmp;
-		stack->b_bot = tmp;
-	}
+		size_zero(tmp, &stack->b_top, &stack->b_bot);
 	else
 	{
 		tmp->next = stack->b_top;
