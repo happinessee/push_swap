@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 16:31:15 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/15 18:00:03 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/20 17:26:17 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ int	set_loca(int num, t_stack *stack)
 {
 	int	res;
 
-	if (num < get_stack_min(stack->a_top))
+	if (num < get_stack_min(stack->a_top, stack->a_size))
 	{
 		res = set_loca_bot(stack);
 	}
-	else if (num > get_stack_max(stack->a_top))
+	else if (num > get_stack_max(stack->a_top, stack->a_size))
 	{
 		res = set_loca_top(stack);
 	}
@@ -68,7 +68,7 @@ int	set_loca_bot(t_stack *stack)
 
 	idx = 0;
 	a = stack->a_top;
-	min = get_stack_min(a);
+	min = get_stack_min(a, stack->a_size);
 	while (a)
 	{
 		tmp = a->content;
@@ -91,7 +91,7 @@ int	set_loca_top(t_stack *stack)
 
 	idx = 0;
 	a = stack->a_top;
-	max = get_stack_max(a);
+	max = get_stack_max(a, stack->a_size);
 	while (a)
 	{
 		tmp = a->content;

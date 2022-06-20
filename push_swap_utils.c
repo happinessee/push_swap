@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 14:01:56 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/17 18:42:47 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/20 17:30:16 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,14 @@ int	ft_isdigit(int c)
 	return (c >= '0' && c <= '9');
 }
 
-void	ft_lstclear(t_list *lst)
+void	ft_lstclear(t_list *lst, int size)
 {
 	t_list	*tmp;
+	int		idx;
 
-	while (lst)
+	idx = 0;
+	tmp = lst;
+	while (idx < size - 3)
 	{
 		tmp = (lst)->next;
 		free(lst);
