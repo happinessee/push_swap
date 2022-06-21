@@ -6,21 +6,22 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 14:01:56 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/21 12:29:35 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/21 13:52:22 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-#include <stddef.h>
 #include <stdlib.h>
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlen(char *str)
 {
 	size_t	cnt;
 
 	cnt = 0;
-	while (s[cnt])
+	if (str == 0)
+		return (0);
+	while (str[cnt])
 		cnt++;
 	return (cnt);
 }

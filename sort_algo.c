@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 14:30:18 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/20 17:49:17 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/21 18:24:01 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	sort_basic2(t_stack *stack)
 
 	tmp = stack->a_top->next;
 	if (tmp->content < stack->a_top->content)
-		sa(stack);
+		sa(stack, 1);
 }
 
 void	sort_basic3(t_stack *stack)
@@ -32,19 +32,19 @@ void	sort_basic3(t_stack *stack)
 	content3 = stack->a_top->next->next->content;
 	if (content1 < content2 && content2 > content3 && content1 < content3)
 	{
-		sa(stack);
-		ra(stack);
+		sa(stack, 1);
+		ra(stack, 1);
 	}
 	else if (content1 > content2 && content2 < content3 && content1 < content3)
-		sa(stack);
+		sa(stack, 1);
 	else if (content1 < content2 && content2 > content3 && content1 > content3)
-		rra(stack);
+		rra(stack, 1);
 	else if (content1 > content2 && content2 < content3 && content1 > content3)
-		ra(stack);
+		ra(stack, 1);
 	else if (content1 > content2 && content2 > content3 && content1 > content3)
 	{
-		sa(stack);
-		rra(stack);
+		sa(stack, 1);
+		rra(stack, 1);
 	}
 }
 
@@ -59,15 +59,15 @@ void	devide_init(t_stack *stack)
 	{
 		if (stack->a_top->content < p1)
 		{
-			pb(stack);
-			rb(stack);
+			pb(stack, 1);
+			rb(stack, 1);
 		}
 		else if (stack->a_top->content < p2)
 		{
-			pb(stack);
+			pb(stack, 1);
 		}
 		else
-			ra(stack);
+			ra(stack, 1);
 		idx--;
 	}
 }
@@ -79,7 +79,7 @@ void	sort_big(t_stack *stack)
 
 	devide_init(stack);
 	while (stack->a_size > 3)
-		pb(stack);
+		pb(stack, 1);
 	if (stack->a_size == 3)
 		sort_basic3(stack);
 	if (stack->a_size == 2)
@@ -92,7 +92,7 @@ void	sort_big(t_stack *stack)
 		rotate_equal(stack, &a_idx, &b_idx);
 		rotate_a(stack, a_idx);
 		rotate_b(stack, b_idx);
-		pa(stack);
+		pa(stack, 1);
 	}
 	sort_last(stack);
 }

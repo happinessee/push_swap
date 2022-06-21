@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 17:23:17 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/19 16:59:16 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/21 18:24:47 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ void	rotate_equal(t_stack *stack, int *a_idx, int *b_idx)
 {
 	while (*a_idx && *b_idx && *a_idx > 0 && *b_idx > 0)
 	{
-		rr(stack);
+		rr(stack, 1);
 		*a_idx = *a_idx - 1;
 		*b_idx = *b_idx - 1;
 	}
 	while (*a_idx && *b_idx && *a_idx < 0 && *b_idx < 0)
 	{
-		rrr(stack);
+		rrr(stack, 1);
 		*a_idx = *a_idx + 1;
 		*b_idx = *b_idx + 1;
 	}
@@ -50,12 +50,12 @@ void	rotate_a(t_stack *stack, int a_idx)
 	{
 		if (a_idx > 0)
 		{
-			ra(stack);
+			ra(stack, 1);
 			a_idx--;
 		}
 		else
 		{
-			rra(stack);
+			rra(stack, 1);
 			a_idx++;
 		}
 	}
@@ -67,12 +67,12 @@ void	rotate_b(t_stack *stack, int b_idx)
 	{
 		if (b_idx > 0)
 		{
-			rb(stack);
+			rb(stack, 1);
 			b_idx--;
 		}
 		else
 		{
-			rrb(stack);
+			rrb(stack, 1);
 			b_idx++;
 		}
 	}
@@ -87,12 +87,12 @@ void	sort_last(t_stack *stack)
 	{
 		if (idx0 > 0)
 		{
-			ra(stack);
+			ra(stack, 1);
 			idx0 -= 1;
 		}
 		else
 		{
-			rra(stack);
+			rra(stack, 1);
 			idx0 += 1;
 		}
 	}

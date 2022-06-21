@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:49:09 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/20 17:57:10 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/21 18:36:57 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,17 @@ typedef struct s_stack
 }	t_stack;
 
 /* commands */
-void	sa(t_stack *stack);
-void	sb(t_stack *stack);
-void	ss(t_stack *stack);
-void	pa(t_stack *stack);
-void	pb(t_stack *stack);
-void	ra(t_stack *stack);
-void	rb(t_stack *stack);
-void	rr(t_stack *stack);
-void	rra(t_stack *stack);
-void	rrb(t_stack *stack);
-void	rrr(t_stack *stack);
+void	sa(t_stack *stack, int flag);
+void	sb(t_stack *stack, int flag);
+void	ss(t_stack *stack, int flag);
+void	pa(t_stack *stack, int flag);
+void	pb(t_stack *stack, int flag);
+void	ra(t_stack *stack, int flag);
+void	rb(t_stack *stack, int flag);
+void	rr(t_stack *stack, int flag);
+void	rra(t_stack *stack, int flag);
+void	rrb(t_stack *stack, int flag);
+void	rrr(t_stack *stack, int flag);
 
 /* sort */
 void	sort(t_stack *stack);
@@ -83,10 +83,24 @@ void	error(void);
 void	check_wrd(char **argv);
 size_t	count_words(char *str, char c);
 char	**ft_split(char const *s, char c);
-size_t	ft_strlen(const char *s);
 int		ft_isdigit(int c);
 int		ft_atoi(const char *str);
 void	ft_lstclear(t_list *lst, int size);
 int		*sort_num_arr(int *num_arr, int size);
+
+/* bonus-gnl */
+char	*get_next_line(int fd);
+size_t	ft_strlen(char *str);
+void	ft_bzero(void *s, size_t n);
+void	*ft_calloc(size_t count, size_t size);
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
+char	*ft_strjoin(char *s1, char *s2, int flag);
+
+/* bonus - checker */
+void	calc(t_stack *stack);
+void	receive_and_check(t_stack *stack);
+void	check_command_execute(t_stack *stack, char *com);
+void	check_command_execute2(t_stack *stack, char *com, int size);
+int		sort_check(t_stack *stack);
 
 #endif

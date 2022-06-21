@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:50:04 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/20 17:56:32 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/21 18:22:29 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	size_zero(t_list *tmp, t_list **lst_top, t_list **lst_bot)
 	*lst_bot = tmp;
 }
 
-void	pa(t_stack *stack)
+void	pa(t_stack *stack, int flag)
 {
 	t_list	*tmp;
 
@@ -49,10 +49,11 @@ void	pa(t_stack *stack)
 	}
 	stack->a_size += 1;
 	stack->b_size -= 1;
-	write(1, "pa\n", 3);
+	if (flag)
+		write(1, "pa\n", 3);
 }
 
-void	pb(t_stack *stack)
+void	pb(t_stack *stack, int flag)
 {
 	t_list	*tmp;
 
@@ -77,5 +78,6 @@ void	pb(t_stack *stack)
 	}
 	stack->b_size += 1;
 	stack->a_size -= 1;
-	write(1, "pb\n", 3);
+	if (flag)
+		write(1, "pb\n", 3);
 }

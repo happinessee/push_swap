@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 17:49:17 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/20 17:47:08 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/21 18:23:11 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,27 @@
 
 #include <unistd.h>
 
-void	rra(t_stack *stack)
+void	rra(t_stack *stack, int flag)
 {
 	if (stack->a_size < 2)
 		return ;
 	stack->a_top = stack->a_top->prev;
 	stack->a_bot = stack->a_bot->prev;
-	write(1, "rra\n", 4);
+	if (flag)
+		write(1, "rra\n", 4);
 }
 
-void	rrb(t_stack *stack)
+void	rrb(t_stack *stack, int flag)
 {
 	if (stack->b_size < 2)
 		return ;
 	stack->b_top = stack->b_top->prev;
 	stack->b_bot = stack->b_bot->prev;
-	write(1, "rrb\n", 4);
+	if (flag)
+		write(1, "rrb\n", 4);
 }
 
-void	rrr(t_stack *stack)
+void	rrr(t_stack *stack, int flag)
 {
 	if (stack->a_size < 2)
 		return ;
@@ -42,5 +44,6 @@ void	rrr(t_stack *stack)
 		return ;
 	stack->b_top = stack->b_top->prev;
 	stack->b_bot = stack->b_bot->prev;
-	write(1, "rrr\n", 4);
+	if (flag)
+		write(1, "rrr\n", 4);
 }
