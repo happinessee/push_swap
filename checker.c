@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 15:31:48 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/21 18:38:08 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/21 18:56:33 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ void	receive_and_check(t_stack *stack)
 	while (str_set)
 	{
 		check_command_execute(stack, str_set);
+		free(str_set);
 		str_set = get_next_line(0);
 	}
 }
