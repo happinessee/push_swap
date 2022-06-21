@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:19:59 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/20 16:40:02 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/21 13:02:39 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,12 @@ int	get_size(int argc, char **argv)
 	while (idx < argc)
 	{
 		if (ft_strlen(argv[idx]) > 1)
-			cnt += count_words(argv[idx], ' ');
+		{
+			if (count_words(argv[idx], ' ') > 0)
+				cnt += count_words(argv[idx], ' ');
+			else
+				error();
+		}
 		else
 			cnt += 1;
 		idx++;
@@ -46,6 +51,8 @@ void	clear(char **str)
 	free(str);
 	str = 0;
 }
+
+#include <stdio.h>
 
 int	*make_num_arr(int *num_arr, int size, char **argv)
 {

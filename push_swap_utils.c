@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 14:01:56 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/20 17:56:54 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/21 12:29:35 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int	ft_atoi(const char *str)
 	sign = 1;
 	while (str[idx] && is_space(str[idx]))
 		idx++;
+	if (str[idx] == 0)
+		error();
 	if (str[idx] == '+' || str[idx] == '-')
 	{
 		if (str[idx] == '-')
