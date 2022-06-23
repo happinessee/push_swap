@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:23:17 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/14 15:48:48 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/23 15:56:09 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,15 @@ void	check_overlap_arr(int *num_arr)
 
 void	is_sorted(int *num_arr, int size)
 {
-	int	idx;
-	int	max;
-	int	tmp;
-	int	cnt;
+	int		idx;
+	long	max;
+	int		tmp;
+	int		cnt;
 
 	idx = 0;
-	max = 0;
+	max = -2147483649;
 	cnt = 0;
-	while (num_arr[idx])
+	while (idx < size)
 	{
 		tmp = num_arr[idx];
 		if (tmp > max)

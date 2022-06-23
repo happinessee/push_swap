@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 15:31:58 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/06/21 18:19:19 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/06/23 15:59:52 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	sort_check(t_stack *stack)
 	val = stack->a_top->content;
 	tmp = stack->a_top->next;
 	if (stack->b_size > 0)
-		error();
+		return (0);
 	while (idx < stack->a_size - 1)
 	{
 		if (tmp->content > val)
